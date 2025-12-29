@@ -22,6 +22,9 @@ const PG_PASSWORD = process.env.PG_PASSWORD as string;
 const PG_SSL = process.env.PG_SSL as string;
 const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY || (" " as string);
 const VALID_API_KEYS = process.env.VALID_API_KEYS;
+const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID as string;
+const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN as string;
+const TWILIO_PHONE_NUMBER = process.env.TWILIO_PHONE_NUMBER as string;
 export const variables = {
   PORT,
   JWT_SECRET,
@@ -42,5 +45,8 @@ export const variables = {
   PG_PASSWORD,
   PG_SSL,
   ENCRYPTION_KEY,
-  VALID_API_KEYS
+  VALID_API_KEYS,
+  TWILIO_ACCOUNT_SID,
+  TWILIO_AUTH_TOKEN,
+  TWILIO_PHONE_NUMBER
 };

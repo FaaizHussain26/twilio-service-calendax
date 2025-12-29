@@ -21,9 +21,11 @@ import dashboardRoutes from "./routes/dashboard.route";
 import { authenticateToken } from "./middleware/auth.middleware";
 import patientTranscriptDetailRoutes from "./routes/patient-transcript-details.route";
 import outcomesLeadsRoutes from "./routes/outcome-lead.route";
+import twilioRoutes from "./routes/twilio.route";
 const app = express();
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // For Twilio webhook form data
 app.use(
   cors({
     origin: [
@@ -54,6 +56,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/interest-form", interestFormRoutes);
 app.use("/api/outcomes", outcomesLeadsRoutes);
 app.use("/api/protocol-details", protocolDetailsRoutes);
+app.use("/api/twilio", twilioRoutes);
 
 app.use("/api", authenticateToken);
 app.use("/api/file", fileUploadRoutes);
